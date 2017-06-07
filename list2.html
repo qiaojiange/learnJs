@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<script type="text/javascript" src="js/doctools.js"></script>
+<script type="text/javascript">
+		function list2() {
+			//		var aNodes = byTag("a");
+			var aNode = event.srcElement;
+			var tdNode = aNode.parentElement;
+			var divNode = tdNode.getElementsByTagName("div")[0];
+			//			var divNode = aNode.nextElementSibling;
+			//		alert(divNode.nodeName);
+			var tabNode =document.getElementsByTagName('table')[0];
+			var divNodes = tabNode.getElementsByTagName('div');
+//			alert(divNodes.length);
+			for (var i = 0; i < divNodes.length; i++) {
+				if (divNode == divNodes[i]) {
+//					alert(divNode.nodeName);
+				
+					if (divNode.className == "open") {
+						divNode.className = "close";
+					} else {
+						divNode.className = "open";
+					}
+				} else {
+					divNodes[i].className = 'close';
+				}
+			}
+		}
+	</script>
+
+	<style type="text/css">
+		table {
+			margin: 10px;
+			padding: 20px;
+			border: #0066FF 1px solid;
+			/*background-color: #66CCFF;*/
+		}
+		
+		table td {
+			border: #0000ff 1px solid;
+			background-color: #00ccff;
+		}
+		
+		table td div {
+			background-color: #CCCAAA;
+			display: none;
+		}
+		
+		table ta a:link,
+		table td a:visited {
+			text-decoration: none;
+			color: #0000ff;
+		}
+		
+		.open {
+			display: block;
+		}
+		
+		.close {
+			display: none;
+		}
+		
+	</style>
+
+	
+
+	<body>
+		<table>
+			<tr>
+				<td>
+					<a href="javascript:void(0)" onclick="list2()">好友列表</a>
+					<div>
+						打发打发的说法是极乐空间<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<a href="javascript:void(0)" onclick="list2()">好友列表</a>
+					<div>
+						打发打发的说法是极乐空间<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<a href="javascript:void(0)" onclick="list2()">好友列表</a>
+					<div>
+						打发打发的说法是极乐空间<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<a href="javascript:void(0)" onclick="list2()">好友列表</a>
+					<div>
+						打发打发的说法是极乐空间<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/> 打发打发的说法是极乐空间
+						<br/>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+	</body>
+
+</html>

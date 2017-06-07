@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<!--1.行颜色间隔显示
+	2. 选中行高亮显示 -->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<link rel="stylesheet" href="css/table.css" />
+	<script type="text/javascript" src="js/doctools.js"></script>
+
+	<script type="text/javascript">
+		function tabColor() {
+			var tabNode = byTag("table")[0];
+			alert(tabNode.nodeName);
+			var rows = tabNode.rows;
+			for (var i = 1; i < rows.length; i++) {
+				if (i % 2 == 1) {
+					rows[i].className = "one";
+				} else {
+					rows[i].className = "two";
+				}
+
+			//鼠标移入选中行
+				var name;
+				rows[i].onmouseover = function() {
+					name = this.className;
+					this.className = "three";
+				}
+//				鼠标移出选中行
+				rows[i].onmouseout = function() {
+					this.className = name;
+				}
+			}
+		}
+		window.onload = tabColor;
+		var className;
+
+//		function over(trNode) {
+//			className = trNode.className;
+//			trNode.className = "three";
+//		}
+//
+//		function out(trNode) {
+//			trNode.className = className;
+//		}
+	</script>
+
+	<style type="text/css">
+		.one {
+			background-color: #00EE00;
+		}
+		
+		.two {
+			background-color: #66CCFF;
+		}
+		
+		.three {
+			background-color: #ffee00;
+		}
+	</style>
+
+	<body>
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th> <a href="javascript:void(0)" onclick="sorttab()">年龄</a></th>
+				<th>地址</th>
+			</tr>
+
+			<tr>
+				<td>张三</td>
+				<td>30</td>
+				<td>北京</td>
+			</tr>
+
+			<tr>
+				<td>李斯</td>
+				<td>24</td>
+				<td>上海</td>
+			</tr>
+
+			<tr>
+				<td>王五</td>
+				<td>23</td>
+				<td>广州</td>
+			</tr>
+
+			<tr>
+				<td>地方</td>
+				<td>4</td>
+				<td>西安</td>
+			</tr>
+
+			<tr>
+				<td>达到</td>
+				<td>12</td>
+				<td>南京</td>
+			</tr>
+
+		</table>
+
+	</body>
+
+</html>

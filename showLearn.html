@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<style type="text/css">
+		table,
+		table td{
+			border: #0066ff 1px solid;
+			width: 600px;
+		}
+		
+		table th,table td {
+			padding: 10px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function opendemo(page) {
+			window.open(page, "_blank", "height=500px,width=600px");
+		}
+	</script>
+
+	<body>
+		<table>
+			<tr>
+				<td>
+					<input type="button" value="演示demo闭合效果" onclick="opendemo('list2.html')" />
+					需求：演示列表展开闭合效果
+				</td>
+				
+				<td>
+					<input type="button" value="改变字体大小颜色" onclick="opendemo('changeFont.html')" />
+					需求：改变文本的字体大小和颜色
+				</td>
+				
+				<td>
+					<input type="button" value="演示表格中按某列进行排序" onclick="opendemo('sorttab1.html')" />
+					需求：对表格中的数据进行排序
+				</td>
+				
+				<td>
+					<input type="button" value="表格中颜色间隔显示" onclick="opendemo('trcolor.html')" />
+					需求：行颜色间隔显示,选中行高亮显示
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input type="button" value="动态创建表格" onclick="opendemo('createTab.html')" />
+				</td>
+				
+					<td>
+					<input type="button" value="动态创建表格" onclick="opendemo('createTab.html')" />
+				</td>
+			</tr>
+			
+		</table>
+	</body>
+
+</html>

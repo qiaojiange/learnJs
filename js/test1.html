@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<script type="text/javascript" src="doctools.js"></script>
+
+	<script type="text/javascript">
+		//		var b = true;
+		//		function change() {
+		//			var divNode = byTag("div")[0];
+		//			//		alert(divNode.nodeName);
+		//			if (b) {
+		//				//				divNode.style.height = '8px';
+		//				//				divNode.style.overflow = 'hidden';
+		//				divNode.className = open;
+		//			} else {
+		//				//				divNode.style.height = '8px';
+		//				//				divNode.style.overflow = 'visible';
+		//				divNode.className = 'close';
+		//			}
+		//			b = !b;
+		//		}
+		
+		//function change(){
+		//	var divNode = byTag("div")[0];
+		//	if(divNode.className =='close'){
+		//	divNode.className = "open";
+		//	}else{
+		//	divNode.className = "close";
+		//	}
+		//}
+		
+		
+		//		function list() {
+		//			var dtNode = event.srcElement;
+		//			var dlNode = dtNode.parentElement;
+		//			//			alert("name+ " + dlNode.nodeName);
+		//			if (dlNode.className == 'close') {
+		//				dlNode.className = 'open';
+		//			} else {
+		//				dlNode.className = 'close';
+		//			}
+		//			
+		//			var dlNodes = doc.getElementsByTagName('dl');
+		//			for (var i = 0; i < dlNodes.length; i++) {
+		//				if (dlNode != dlNodes[i]) {
+		//					dlNodes[i].className = 'close';
+		//				}
+		//			}
+		//		}
+		
+		function list(dtNode) {
+			var dlNode = dtNode.parentNode;
+//			alert("name = " + dlNode.nodeName);
+			var dlNodes = doc.getElementsByTagName('dl');
+			for (var i = 0; i < dlNodes.length; i++) {
+				if (dlNode == dlNodes[i]) {
+					if (dlNode.className == 'close') {
+						dlNode.className = 'open';
+					} else {
+						dlNode.className = 'close';
+					}
+				} else {
+					dlNodes[i].className = 'close';
+				}
+			}
+		}
+		
+		//		function list() {
+		//			var dtNode = byTag("dt")[0];
+		//			var dlNode = byTag('dl')[0];
+		////			alert("name+ " + dlNode.nodeName);
+		//			if (dlNode.className == 'close') {
+		//				dlNode.className = 'open';
+		//			} else {
+		//				dlNode.className = 'close';
+		//			}
+		//		}
+	</script>
+
+	<style type="text/css">
+		.open {
+			overflow: visible;
+		}
+		
+		.close {
+			overflow: hidden;
+		}
+		
+		dl {
+			height: 20px;
+			overflow: hidden;
+		}
+	</style>
+
+	<body>
+		<!--<div  onclick="change()">
+			阿里的开发基地防守打法都市客积分卡绝地反击
+		</div>-->
+
+		<dl>
+			<dt onclick="list(this)">上层项目</dt>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+		</dl>
+
+		<dl>
+			<dt onclick="list(this)">上层项目</dt>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+		</dl>
+
+		<dl>
+			<dt onclick="list(this)">上层项目</dt>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+			<dd>大放大的说法的房间卡房间里</dd>
+		</dl>
+	</body>
+
+</html>

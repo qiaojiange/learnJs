@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/table.css" />
+	<script type="text/javascript" src="js/doctools.js"></script>
+	<script type="text/javascript">
+		//	需求：对表格中的数据进行排序
+		//1.取出表格中的所有行对象
+		//2.将所有行对象放入到一个临时的容器中
+		//3.在容器中进行排序
+		//4.将排序后的结果，更新到表格中
+		var b = true;
+		function sorttab() {
+			var tabNode = byTag("table")[0];
+//			alert(tabNode.nodeName);
+			var rowNodes = tabNode.rows;
+			//			alert(rowNodes.length);
+			var arr = new Array();
+			for (var i = 1; i < rowNodes.length; i++) {
+				arr[i - 1] = rowNodes[i];
+			}
+			//			alert(arr.length);
+			sortt(arr);
+			var tbdNode = tabNode.getElementsByTagName("tbody")[0];
+			//			alert(tbdNode.nodeName);
+			if (b) {
+				for (var i = 0; i < arr.length; i++) {
+					//				alert(arr[i].cells[1].innerText);
+					tbdNode.appendChild(arr[i]);
+				}
+			} else {
+				for (var i = arr.length - 1; i >= 0; i--) {
+					//				alert(arr[i].cells[1].innerText);
+					tbdNode.appendChild(arr[i]);
+				}
+			}
+			b = !b;
+		}
+
+		function sortt(arr) {
+			for (var i = 0; i < arr.length; i++) {
+				for (var j = i + 1; j < arr.length; j++) {
+					if (parseInt(arr[i].cells[1].innerText) > parseInt(arr[j].cells[1].innerText)) {
+						var temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+				}
+			}
+		}
+	</script>
+
+	<body>
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th> <a href="javascript:void(0)" onclick="sorttab()">年龄</a></th>
+				<th>地址</th>
+			</tr>
+
+			<tr>
+				<td>张三</td>
+				<td>30</td>
+				<td>北京</td>
+			</tr>
+
+			<tr>
+				<td>李斯</td>
+				<td>24</td>
+				<td>上海</td>
+			</tr>
+
+			<tr>
+				<td>王五</td>
+				<td>23</td>
+				<td>广州</td>
+			</tr>
+
+			<tr>
+				<td>地方</td>
+				<td>4</td>
+				<td>西安</td>
+			</tr>
+
+			<tr>
+				<td>达到</td>
+				<td>12</td>
+				<td>南京</td>
+			</tr>
+
+		</table>
+
+	</body>
+
+</html>

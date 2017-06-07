@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			alert("onload");
+		}
+		window.onunload = function() {
+			alert("onunload");
+		}
+		window.onbeforeunload = function() {
+			alert("onberforeunload");
+		}
+
+		function addemo() {
+//			按设置的间隔时间，进行窗口提示
+			window.setInterval("alert('kk')", 3000);
+			//			window.open("ad.html", "_blank", "height=400,width= 600,location=no, menubar=no,scrollbars=no,resizable=no,status=no,toolbar=no");
+		}
+
+		function windemo() {
+			var name = window.navigator.appName;
+			var vision = window.navigator.appVersion;
+			//		alert("name = "+name + " version = "+ vision);
+			//		var url = window.location.href = "http://www.baidu.com";
+			//		alert(url);
+			//		var b = window.confirm("这是干事？");
+			//移动窗口
+			//		window.moveBy(200,400);
+			var text = window.prompt("我是对话框", "haha");
+			alert(text);
+		}
+		
+//		按键按下事件
+		function keyDemo(){
+			var node = event.srcElement;
+			alert(node.nodeName);
+			
+//			if(window.event.keyCode >= 48 && window.event.keyCode<=57){
+//				alert("不允许录入");
+
+//事件源
+//				event.returnValue =false;
+//			}
+//			alert(window.event.keyCode);
+		}
+		
+	</script>
+
+	<body>
+		<input type="text" onkeypress="keyDemo()" />
+
+		<br />
+
+		<input type="button" onclick="addemo()" value="演示widow对象" />
+	</body>
+
+</html>

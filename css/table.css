@@ -1,0 +1,17 @@
+
+table{
+border: #0066FF 1px solid;
+width: 80%;
+
+}
+table th{
+border: #4400ff 1px solid;
+background-color:#00EEE0 ;
+
+}
+table td{
+border: #3300ff 1px solid;
+text-align: center;
+
+
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<script type="text/javascript">
+		var info = "";
+//获取document对象
+		function getDocAll() {
+			var nodes = document;
+			listNode(nodes,0);
+			document.write(info);
+		}
+//打印所有的dom节点
+		function listNode(node, level) {
+			var nodes = node.childNodes;
+			printInfo(node, level);
+			level++;
+			for (var i = 0; i < nodes.length; i++) {
+				if (node.hasChildNodes()) {
+					listNode(nodes[i],level);
+				} else {
+					printInfo(node, level);
+				}
+			}
+		}
+
+		function printInfo(node, level) {
+			info += printSpace(level) + "..." + node.nodeName + "..." + node.nodeType + "..." + node.nodeValue + "<br/>";
+		}
+
+		function printSpace(level) {
+			var s = "";
+			for (var i = 0; i < level; i++) {
+				s += "|----";
+			}
+			return s;
+		}
+
+		function dom() {
+			//		alert("ninao");
+			var divObj = document.getElementById("divid");
+			divObj.style.backgroundColor = "#FF0000";
+			var parent = divObj.parentNode;
+			var childrens = divObj.childNodes;
+//			获取上一个上一个兄弟节点的，上一个兄弟节点
+			var preNode = divObj.previousSibling.previousSibling;
+			//			getNodeInfo(preNode);
+			var nextNode = divObj.nextSibling.nextSibling;
+			//			getNodeInfo(nextNode);
+			var aNode = nextNode.nextElementSibling;
+			//			getNodeInfo(aNode.childNodes[0].nodeValue);
+			//			alert(aNode.innerText);
+			//需求，获取单元格一的文本
+			var tabNode = divObj.nextElementSibling;
+			var trNodes = tabNode.getElementsByTagName("td");
+			alert(trNodes[0].innerText);
+			//			getNodeInfo(trNodes[0].childNodes[0]);
+			//			alert(trNodes.length);
+			//			getNodeInfo(parent);
+			//			getNodeInfo(divObj);
+		}
+
+		function getNodeInfo(node) {
+			alert("name = " + node.nodeName + " type =" + node.nodeType + " value=" + node.nodeValue + "--");
+		}
+	</script>
+
+	<body>
+		<!--<p> hello world!</p>-->
+		<input type="button" onclick="getDocAll()" value="演示" />
+		<div id="divid">
+			sefdsfadsfaf
+		</div>
+		<table>
+			<tr>
+				<td>单元格一</td>
+				<td>单元格二</td>
+			</tr>
+
+			<tr>
+				<td>单元格三</td>
+				<td>单元格四</td>
+			</tr>
+		</table>
+		<a href="dddsfadf.com">xianlang</a>
+		<span>审判区域</span>
+	</body>
+
+</html>

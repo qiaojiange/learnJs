@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/doctools.js"></script>
+	<script type="text/javascript">
+		function changeMax() {
+			//			alert("large");
+			var divNode = document.getElementById("newId");
+			divNode.style.fontSize = "50px";
+		}
+
+		function changeSize(size) {
+			//			var divNode = document.getElementById("newId");
+			var divNode = byId("newId");
+			alert("changeSize");
+			divNode.style.fontSize = size;
+		}
+
+		function changeSize(className) {
+			//			var divNode = document.getElementById("newId");
+			var divNode = byId("newId");
+			divNode.className = className;
+			//			divNode.style.fontSize = size;
+		}
+	</script>
+
+	<style type="text/css">
+		.norm {
+			background-color: #cccaaa;
+			color: #00eee0;
+			font-size: 24px;
+		}
+		
+		.max {
+			background-color: #cccccc;
+			color: #000000;
+			font-size: 48px;
+		}
+		
+		.min {
+			background-color: #66ccff;
+			color: #006600;
+			font-size: 12px;
+		}
+	</style>
+	<!--需求，页面中一个新闻区域
+	通过连接 大 中 小
+	可以让用户改变区域中的字体大小-->
+
+	<body>
+
+		<a href="javascript:void(0)" onclick="changeSize('max')">大</a>
+		<br />
+
+		<a id="middle" href="javascript:void(0)" onclick="changeSize('norm')">中</a>
+		<br />
+
+		<a id="small" href="javascript:void(0)" onclick="changeSize('min')">小</a>
+		<br />
+
+		<div id="newId"  class="norm">
+			海阔天空，我心飞翔<br /> 海阔天空，我心飞翔
+			<br /> 海阔天空，我心飞翔
+			<br /> 海阔天空，我心飞翔
+			<br /> 海阔天空，我心飞翔
+			<br /> 海阔天空，我心飞翔
+			<br />
+		</div>
+		<br />
+
+	</body>
+
+</html>
